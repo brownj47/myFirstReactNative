@@ -17,8 +17,8 @@ import {
 	StyleSheet,
 } from 'react-native';
 
-import Home from './src/screens/Home.js'
-import HeaderBar from './src/components/HeaderBar.js';
+import Home from './src/screens/Home.js';
+import {HeaderBar} from './src/components';
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod 
 */
