@@ -18,7 +18,8 @@ import {
     TouchableOpacity,
     useColorScheme,
     View,
-    Image
+    Image,
+    TextInput
 } from 'react-native';
 
 import {HeaderBar, MonImg, MonStats, NavBar, NewMonBtn} from '../components'
@@ -27,7 +28,7 @@ import {HeaderBar, MonImg, MonStats, NavBar, NewMonBtn} from '../components'
  * LTI update could not be added via codemod 
 */
 
-const Home = () => {
+const Profile = () => {
     
     const [monObj, setMonObj] = useState({})
 
@@ -50,9 +51,11 @@ const Home = () => {
 
     return (
         <>
+            <TextInput/>
             <NavBar />
             <MonImg />
             <NewMonBtn monsterFetch={monsterFetch}/>
+
             <MonStats monster={monObj||{}}/>
 
 
@@ -61,4 +64,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Profile;
