@@ -22,44 +22,57 @@ import {
     TextInput
 } from 'react-native';
 
-import monsterPool from '../assets/monsterPool.json'
-import { HeaderBar, MonImg, MonStats, NavBar, NewMonBtn } from '../components'
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod 
 */
 
 const Profile = () => {
+    
+    const [user,setUser] = useState({
+        name:'',
+        race:'',
+        class:'',
+        stats:{
+            str:'',
+            dex:'',
+            con:'',
+            int:'', 
+            wis:'', 
+            char:''
+        },
+        notes:'',
+    })
+    const handleFormChange = (specialKey, newVal)=>{
+        setUser({...user, [specialKey]:newVal})
+    }
 
-    
-    
     return (
         <View>
             <Text style={style.userDataLine}>Profile</Text>
 
             <View style={style.userDataLine}>
                 <Text style={style.userDataLabel}>Name: </Text>
-                <TextInput style={style.userDataInput}
-                />
+                <TextInput style={style.userDataInput} value={user.name} onChangeText={(newText)=>{handleFormChange('name', newText )}}/>
             </View>
             <View style={style.userDataLine}>
                 <Text style={style.userDataLabel}>Race: </Text>
-                <TextInput style={style.userDataInput}
+                <TextInput style={style.userDataInput} value={user.race} onChangeText={(newText)=>{handleFormChange('race', newText )}}
                 />
             </View>
             <View style={style.userDataLine}>
                 <Text style={style.userDataLabel}>Class: </Text>
-                <TextInput style={style.userDataInput}
+                <TextInput style={style.userDataInput} value={user.class} onChangeText={(newText)=>{handleFormChange('class', newText )}}
                 />
             </View>
             <View style={style.userDataLine}>
                 <Text style={style.userDataLabel}>Stats: </Text>
-                <TextInput style={style.userDataInput}
+                <TextInput style={style.userDataInput} value={user.name}
                 />
             </View>
             <View style={style.userDataLine}>
                 <Text style={style.userDataLabel}>Notes: </Text>
-                <TextInput multiline={true} style={style.userDataInput}
+                <TextInput multiline={true} style={style.userDataInput} value={user.notes} onChangeText={(newText)=>{handleFormChange('notes', newText )}}
                 />
             </View>
         </View>
