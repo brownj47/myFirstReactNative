@@ -14,45 +14,28 @@ import {
 	SafeAreaView,
 	ScrollView,
 	StatusBar,
-	StyleSheet,
 } from 'react-native';
 
-import {Home, Profile} from './src/screens';
-import {HeaderBar} from './src/components';
+import {Home, Profile, Credits} from './src/screens';
+import {HeaderBar, NavBar} from './src/components';
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod 
 */
 
 const App = () => {
-
+	const [page, setPage]= useState('Home')
 	return (
 		<SafeAreaView style={{ backgroundColor: '#3jdo30' }}>
 			<StatusBar />
 			<ScrollView>
 				<HeaderBar/>
-				{/* <Profile/> */}
-				<Home /> 
+				<NavBar setPage={(arg)=>{setPage(arg)}}/>
+				{page === 'Home'? <Home />:<></>}
+				{page === 'Profile'? <Profile />:<></>}
+				{page === 'Credits'? <Credits />:<></>}
 			</ScrollView>
 		</SafeAreaView>
 	);
 };
 
-const styles = StyleSheet.create({
-	sectionContainer: {
-		marginTop: 32,
-		paddingHorizontal: 24,
-	},
-	sectionTitle: {
-		fontSize: 24,
-		fontWeight: '600',
-	},
-	sectionDescription: {
-		marginTop: 8,
-		fontSize: 18,
-		fontWeight: '400',
-	},
-	highlight: {
-		fontWeight: '700',
-	},
-})
 export default App;

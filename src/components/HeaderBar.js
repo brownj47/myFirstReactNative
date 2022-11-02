@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
-import {Text,View} from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 const HeaderBar = () => {
     return (
         <View
-            style={{
-                backgroundColor: '#0000ff',
-                alignItems: 'center'
-            }}
+            style={style.headSec}
         >
-            <Text style={{ color: '#fff', fontSize: 32, margin: 6 }}>Campaign Manager</Text>
+            <Text style={style.headText}>Campaign Manager</Text>
         </View>
     )
 }
+
+const style = StyleSheet.create({
+    headText:{
+        color: '#fff', 
+        fontSize: 32, 
+        margin: 6
+    },
+    headSec:{
+        alignItems: 'center'
+    }
+})
+
 export default HeaderBar;
