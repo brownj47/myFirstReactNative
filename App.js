@@ -30,8 +30,8 @@ const App = () => {
 			<StatusBar />
 			<ScrollView>
 				<HeaderBar/>
-				<Profile/>
-				{/* <Home /> */} 
+				{/* <Profile/> */}
+				<Home /> 
 			</ScrollView>
 		</SafeAreaView>
 	);
