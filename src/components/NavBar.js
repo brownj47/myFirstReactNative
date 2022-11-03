@@ -19,7 +19,7 @@ import {
 const NavBar = (props) => {
     return (
         <View style={style.navBarSec}>
-            <TouchableOpacity onPress={()=>{props.setPage('Home')}} style={style.btnBox}><Text style={style.btnText}>Home</Text></TouchableOpacity>
+            <TouchableOpacity onPress={()=>{props.setPage('Home')}} style={style.btnBox}><Text style={style.btnText}>Random Monster</Text></TouchableOpacity>
             <TouchableOpacity onPress={()=>{props.setPage('Profile')}} style={style.btnBox}><Text style={style.btnText}>Profile</Text></TouchableOpacity>
             <TouchableOpacity onPress={()=>{props.setPage('Credits')}}style={style.btnBox}><Text style={style.btnText}>Credits</Text></TouchableOpacity>
         </View>
@@ -32,11 +32,12 @@ const style = StyleSheet.create({
         justifyContent: 'space-around'
     },
     btnBox:{
-        backgroundColor: '#008000', 
-        margin: 3
+        backgroundColor: '#C5614E', 
+        margin: 3,
+        borderRadius: 5,
     },
     btnText:{
-        color: '#fff',
+        color: '#FFFCFF',
         margin: 5, 
     }
 

@@ -31,7 +31,7 @@ const style = StyleSheet.create({
         height: 300, 
         margin: 5, 
         borderWidth: 5, 
-        borderColor: 'white',
+        borderColor: '#FFFCFF',
         borderRadius: 5
     },
     imgSection:{

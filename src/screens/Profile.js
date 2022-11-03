@@ -49,7 +49,10 @@ const Profile = () => {
 
     return (
         <View>
-            <Text style={style.userDataLine}>Profile</Text>
+            <Text>Character Details:</Text>
+            <Text>Design your character and take notes on the campaign in this screen!</Text>
+
+            <TouchableOpacity style={style.btnBox}><Text style={style.btnText}>Joe</Text></TouchableOpacity>
 
             <View style={style.userDataLine}>
                 <Text style={style.userDataLabel}>Name: </Text>
@@ -65,6 +68,7 @@ const Profile = () => {
                 <TextInput style={style.userDataInput} value={user.class} onChangeText={(newText)=>{handleFormChange('class', newText )}}
                 />
             </View>
+            {/*  TODO: Add in other stats locations */}
             <View style={style.userDataLine}>
                 <Text style={style.userDataLabel}>Stats: </Text>
                 <TextInput style={style.userDataInput} value={user.name}
@@ -81,21 +85,33 @@ const Profile = () => {
 
 const style = StyleSheet.create({
     userDataLine:{
-        backgroundColor: 'thistle', 
         flexDirection: 'row' 
     },
     userDataLabel: {
-        color: '#fff',
+        color: '#FFFCFF',
         marginLeft: 10,
-        padding: 2,
+        marginBottom: 3,
+        padding: 3,
         fontWeight: 'bold',
-        flex:1
+        flex:1,
     },
     userDataInput: {
-        color: 'white',
-        backgroundColor: 'cornflowerblue',
+        color: '#FFFCFF',
+        backgroundColor: '#C5614E',
         flex: 6,
-        paddingLeft: 4
+        paddingLeft: 4,
+        borderRadius:2,
+        marginBottom: 3,
+        marginRight:5
+    },
+    btnBox:{
+        backgroundColor: '#C5614E', 
+        margin: 3,
+        borderRadius: 5,
+    },
+    btnText:{
+        color: '#FFFCFF',
+        margin: 5, 
     }
 })
 

@@ -13,7 +13,7 @@ const HeaderBar = () => {
 
 const style = StyleSheet.create({
     headText:{
-        color: '#fff', 
+        color: '#FFFCFF', 
         fontSize: 32, 
         margin: 6
     },

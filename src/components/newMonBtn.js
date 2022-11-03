@@ -15,12 +15,13 @@ const style = StyleSheet.create({
         justifyContent: 'space-around'
     },
     monOpac: {
-        backgroundColor: '#008000',
+        backgroundColor: '#C5614E',
         margin: 3,
-        alignItems: 'center'
+        alignItems: 'center',
+        borderRadius: 5
     },
     btnText: {
-        color: '#fff',
+        color: '#FFFCFF',
         margin: 5
     }
 })

@@ -25,7 +25,7 @@ import {HeaderBar, NavBar} from './src/components';
 const App = () => {
 	const [page, setPage]= useState('Home')
 	return (
-		<SafeAreaView style={{ backgroundColor: '#3jdo30' }}>
+		<SafeAreaView style={{ backgroundColor: '#4D5359', flex:1 }}>
 			<StatusBar />
 			<ScrollView>
 				<HeaderBar/>

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         paddingTop:10,
     },
     monStatLine:{
-        color: '#fff',
+        color: '#FFFCFF',
         marginLeft: 10,
         padding: 2
     },
