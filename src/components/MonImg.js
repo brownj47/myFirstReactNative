@@ -1,16 +1,20 @@
+;
+import React, { useEffect, useState } from 'react';
+import { View, Image, StyleSheet } from "react-native";
+import DefaultImage from '../assets/placeholder.png';
 
-import React, { useEffect, useState } from 'react'
-import { View, Image, StyleSheet } from "react-native"
+const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
 
 const MonImg = ({monster}) => {
-    const [imgSrc, setImgSrc]= useState('https://place-puppy.com/300x300')
+    const [imgSrc, setImgSrc]= useState(DEFAULT_IMAGE);
+
     useEffect(()=>{
             if (monster.image){
-                setImgSrc(`https://www.dnd5eapi.co${monster.image}`)
+                setImgSrc(`https://www.dnd5eapi.co${monster.image}`);
             } else{
-                setImgSrc('https://place-puppy.com/300x300')
-            }
-    }, [monster])
+                setImgSrc(DEFAULT_IMAGE);
+            };
+    }, [monster]);
 
     return (
         <View style={style.imgSection}>
@@ -38,6 +42,6 @@ const style = StyleSheet.create({
         // backgroundColor: "#ff00ff", 
         alignItems: 'center' 
     }
-})
+});
 
 export default MonImg;
