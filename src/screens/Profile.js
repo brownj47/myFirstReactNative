@@ -1,14 +1,4 @@
-import React, { useState } from 'react';
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-
-
+import React, { useEffect, useState } from 'react';
 import {
     SafeAreaView,
     ScrollView,
@@ -21,11 +11,21 @@ import {
     Image,
     TextInput
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+*/
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod 
 */
+
+
+
 
 const Profile = () => {
 
@@ -43,11 +43,38 @@ const Profile = () => {
         },
         notes: '',
     })
+    useEffect(() => {
+        // const storedData = getData();
+        getData().then(res=>{
+            setUser(res)
+        })
+    }, [])
     const handleFormChange = (specialKey, newVal) => {
         setUser({ ...user, [specialKey]: newVal })
     }
     const handleStatChange = (specialKey, newVal) => {
         setUser({ ...user, stats: { ...user.stats, [specialKey]: newVal } })
+    }
+    const storeData = async (value) => {
+        try {
+            const jsonValue = JSON.stringify(value)
+            await AsyncStorage.setItem('key', jsonValue)
+        } catch (e) {
+            // saving error
+            console.log(e)
+        }
+        console.log('Store done')
+    }
+    
+    const getData = async () => {
+        try {
+          const jsonValue = await AsyncStorage.getItem('key')
+          return jsonValue != null ? JSON.parse(jsonValue) : null
+        } catch(e) {
+          // read error
+          console.log(e)
+        }
+        console.log('Done.')
     }
 
     return (
@@ -117,7 +144,7 @@ const Profile = () => {
                 {/* spacer */}
                 <View style={{ flex: 1 }}></View>
                 <View style={style.svBtnSec}>
-                    <TouchableOpacity style={style.btnBox}><Text style={style.btnText}>Save</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={() => { storeData(user) }} style={style.btnBox}><Text style={style.btnText}>Save</Text></TouchableOpacity>
                 </View>
             </View>
         </View>
