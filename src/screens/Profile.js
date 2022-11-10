@@ -42,7 +42,7 @@ const Profile = () => {
     });
     useEffect(() => {
         // const storedData = getData();
-        getData().then(res=>{
+        getData().then(res => {
             setUser(res)
         });
     }, []);
@@ -62,21 +62,23 @@ const Profile = () => {
         };
         console.log('Store done');
     };
-    
+
     const getData = async () => {
         try {
-          const jsonValue = await AsyncStorage.getItem('key');
-          return jsonValue != null ? JSON.parse(jsonValue) : null;
-        } catch(e) {
-          // read error
-          console.log(e);
+            const jsonValue = await AsyncStorage.getItem('key');
+            return jsonValue != null ? JSON.parse(jsonValue) : null;
+        } catch (e) {
+            // read error
+            console.log(e);
         };
     };
 
     return (
         <View>
-            <Text>Character Details:</Text>
-            <Text>Design your character and take notes on the campaign in this screen!</Text>
+            <View style={style.headerBox}>
+                <Text style={style.headerText}>Design your character and take notes on the campaign in this screen!</Text>
+            </View>
+
 
             <View style={style.userDataLine}>
                 <Text style={style.userDataLabel}>Name: </Text>
@@ -150,6 +152,17 @@ const Profile = () => {
 const style = StyleSheet.create({
     indent: {
         marginLeft: 6
+    },
+    // headerBox:{
+    //     flexDirection: 'row',
+    //     justifyContent:'center',
+    //     flexWrap:true
+    // },
+    headerText:{
+        color: '#FFFCFF',
+        margin: 10,
+        fontSize: 18,
+        textAlign: 'center'
     },
     userDataLine: {
         flexDirection: 'row'

@@ -33,23 +33,23 @@ const Credits = () => {
     return (
         <>
             <View>
-                <Text style={style.headingText}>Credits:</Text>
 
-                <Text style={{ color: 'white' }}>Created by Justus Brown, 2022.</Text>
+                <Text style={{ color: '#FFFCFF', textAlign:'center'}}>Created by Justus Brown, 2022.</Text>
 
-                <TouchableOpacity onPress={() => Linking.openURL('https://github.com/brownj47')}><Image style={{ width: 30, height: 30 }}source={{uri: GIT_HUB_ICON}} /></TouchableOpacity>
+                {/* social media buttons */}
+                <View style={style.socBtnSec}>
+                    <TouchableOpacity style={style.socBtn} onPress={() => Linking.openURL('https://github.com/brownj47')}><Image style={{ width: 30, height: 30}} source={{ uri: GIT_HUB_ICON }} /></TouchableOpacity>
+                    <TouchableOpacity style={style.socBtn} onPress={() => Linking.openURL('https://www.linkedin.com/in/justus-b-8a1158108/')}><Image style={{ width: 30, height: 30 }} source={{ uri: LINKEDIN_ICON }} /></TouchableOpacity>
+                </View>
 
-                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/justus-b-8a1158108/')}><Image style={{ width: 30, height: 30 }} source={{uri: LINKEDIN_ICON}}/></TouchableOpacity>
-                
-
-
-                <Text style={{ color: 'white' }}>Please follow this <Text style={{ color: 'blue' }} onPress={() => Linking.openURL('https://github.com/brownj47/myFirstReactNative')}>link</Text> to visit the github repository for this project.</Text>
-
+                <Text style={{ color: 'white', textAlign:'center', margin:10 }}>Please follow this <Text style={{ color: 'blue' }} onPress={() => Linking.openURL('https://github.com/brownj47/myFirstReactNative')}>link</Text> to visit the github repository for this project.</Text>
 
 
-                <Text style={{ color: 'white' }}>License:</Text>
-                <Text style={{ color: 'white' }}>This project is licensed under the terms of the MIT License. The underlying material is released using the <Text style={{ color: 'blue' }} onPress={() => Linking.openURL('https://company.wizards.com/en')}>Open Gamimg License Version 1.0a</Text>.</Text>
-                <Text style={{ color: 'white' }}>I used the monsters.json file from the 5e-bits/5e-database <Text style={{ color: 'blue' }} onPress={() => Linking.openURL('https://github.com/5e-bits/5e-database')}>Github Repo</Text> for the random monster generator.</Text>
+
+                <Text style={style.bold }>License:</Text>
+                <Text style={style.primaryText}>This project is licensed under the terms of the MIT License. The underlying material is released using the <Text style={{ color: 'blue' }} onPress={() => Linking.openURL('https://company.wizards.com/en')}>Open Gaming License Version 1.0a</Text>.</Text>
+
+                <Text style={style.primaryText}>I used the monsters.json file from the 5e-bits/5e-database <Text style={{ color: 'blue' }} onPress={() => Linking.openURL('https://github.com/5e-bits/5e-database')}>Github Repo</Text> for the random monster generator.</Text>
             </View>
         </>
     );
@@ -57,7 +57,28 @@ const Credits = () => {
 
 const style = StyleSheet.create({
     headingText: {
-        color: 'white',
+        color: '#FFFCFF',
+    },
+    socBtn:{
+        backgroundColor:'#AE4B37', 
+        margin: 10, 
+        padding: 3, 
+        borderRadius:5
+    },
+    socBtnSec:{ 
+        flexDirection: 'row', 
+        justifyContent: 'center'
+    },
+    primaryText:{
+        color: '#FFFCFF', 
+        textAlign:'center', 
+        margin:10
+    },
+    bold:{
+        fontWeight:'bold',
+        color: '#FFFCFF', 
+        textAlign:'center', 
+        marginBottom: -3
     }
 })
 
