@@ -24,9 +24,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
  * LTI update could not be added via codemod 
 */
 
-
-
-
 const Profile = () => {
 
     const [user, setUser] = useState({
@@ -42,40 +39,39 @@ const Profile = () => {
             char: ''
         },
         notes: '',
-    })
+    });
     useEffect(() => {
         // const storedData = getData();
         getData().then(res=>{
             setUser(res)
-        })
-    }, [])
+        });
+    }, []);
     const handleFormChange = (specialKey, newVal) => {
-        setUser({ ...user, [specialKey]: newVal })
-    }
+        setUser({ ...user, [specialKey]: newVal });
+    };
     const handleStatChange = (specialKey, newVal) => {
-        setUser({ ...user, stats: { ...user.stats, [specialKey]: newVal } })
-    }
+        setUser({ ...user, stats: { ...user.stats, [specialKey]: newVal } });
+    };
     const storeData = async (value) => {
         try {
-            const jsonValue = JSON.stringify(value)
-            await AsyncStorage.setItem('key', jsonValue)
+            const jsonValue = JSON.stringify(value);
+            await AsyncStorage.setItem('key', jsonValue);
         } catch (e) {
             // saving error
-            console.log(e)
-        }
-        console.log('Store done')
-    }
+            console.log(e);
+        };
+        console.log('Store done');
+    };
     
     const getData = async () => {
         try {
-          const jsonValue = await AsyncStorage.getItem('key')
-          return jsonValue != null ? JSON.parse(jsonValue) : null
+          const jsonValue = await AsyncStorage.getItem('key');
+          return jsonValue != null ? JSON.parse(jsonValue) : null;
         } catch(e) {
           // read error
-          console.log(e)
-        }
-        console.log('Done.')
-    }
+          console.log(e);
+        };
+    };
 
     return (
         <View>
@@ -205,6 +201,6 @@ const style = StyleSheet.create({
         color: '#FFFCFF',
         margin: 5,
     }
-})
+});
 
 export default Profile;
