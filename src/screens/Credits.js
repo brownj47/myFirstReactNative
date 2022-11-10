@@ -42,14 +42,14 @@ const Credits = () => {
                     <TouchableOpacity style={style.socBtn} onPress={() => Linking.openURL('https://www.linkedin.com/in/justus-b-8a1158108/')}><Image style={{ width: 30, height: 30 }} source={{ uri: LINKEDIN_ICON }} /></TouchableOpacity>
                 </View>
 
-                <Text style={{ color: 'white', textAlign:'center', margin:10 }}>Please follow this <Text style={{ color: 'blue' }} onPress={() => Linking.openURL('https://github.com/brownj47/myFirstReactNative')}>link</Text> to visit the github repository for this project.</Text>
+                <Text style={{ color: 'white', textAlign:'center', margin:10 }}>Please follow this <Text style={{ color: '#C5614E' }} onPress={() => Linking.openURL('https://github.com/brownj47/myFirstReactNative')}>link</Text> to visit the github repository for this project.</Text>
 
 
 
                 <Text style={style.bold }>License:</Text>
-                <Text style={style.primaryText}>This project is licensed under the terms of the MIT License. The underlying material is released using the <Text style={{ color: 'blue' }} onPress={() => Linking.openURL('https://company.wizards.com/en')}>Open Gaming License Version 1.0a</Text>.</Text>
+                <Text style={style.primaryText}>This project is licensed under the terms of the MIT License. The underlying material is released using the <Text style={{ color: '#C5614E' }} onPress={() => Linking.openURL('https://company.wizards.com/en')}>Open Gaming License Version 1.0a</Text>.</Text>
 
-                <Text style={style.primaryText}>I used the monsters.json file from the 5e-bits/5e-database <Text style={{ color: 'blue' }} onPress={() => Linking.openURL('https://github.com/5e-bits/5e-database')}>Github Repo</Text> for the random monster generator.</Text>
+                <Text style={style.primaryText}>I used the monsters.json file from the 5e-bits/5e-database <Text style={{ color: '#C5614E' }} onPress={() => Linking.openURL('https://github.com/5e-bits/5e-database')}>Github Repo</Text> for the random monster generator.</Text>
             </View>
         </>
     );
@@ -60,7 +60,7 @@ const style = StyleSheet.create({
         color: '#FFFCFF',
     },
     socBtn:{
-        backgroundColor:'#AE4B37', 
+        backgroundColor:'#C5614E', 
         margin: 10, 
         padding: 3, 
         borderRadius:5
