@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
     StyleSheet,
     Text,
     TouchableOpacity,
-    useColorScheme,
     View,
-    Image,
     TextInput
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';

@@ -10,16 +10,11 @@ import React, { useState } from 'react';
  * LTI update could not be added via codemod 
 */
 import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
     StyleSheet,
     Text,
     TouchableOpacity,
-    useColorScheme,
     View,
     Image,
-    TextInput,
     Linking
 } from 'react-native';
 
