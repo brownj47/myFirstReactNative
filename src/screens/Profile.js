@@ -38,7 +38,9 @@ const Profile = () => {
     useEffect(() => {
         // const storedData = getData();
         getData().then(res => {
-            setUser(res)
+            if (res != null) {
+                setUser(res)
+            }
         });
     }, []);
     const handleFormChange = (specialKey, newVal) => {
@@ -153,7 +155,7 @@ const style = StyleSheet.create({
     //     justifyContent:'center',
     //     flexWrap:true
     // },
-    headerText:{
+    headerText: {
         color: '#FFFCFF',
         margin: 10,
         fontSize: 18,
