@@ -1,21 +1,14 @@
-# Random Chat
+# Campaign Manager
 
 ## Description
-Deployed at https://brownj47.github.io/myFirstReactNative/
+This is a mobile application for tabletop rpg enthusiasts. It allows a user to retrieve a random monster along with its stats (and sometimes an image), and to take notes about their character's stats/storyline. 
 
-## Table of Contents
+I built it using React Native. Thanks to [dnd5eapi.co](https://www.dnd5eapi.co/) for the use of their monsters.json file. I would like to note that I have very little experience with DnD and chose to use this them only because of the nicely packaged data provided by them. If you know of a feature that would greatly increase the utility of the application, please feel free to open an issue. 
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-
-## Usage
-
-## Credits
+You preview the application at my github paged site here: https://brownj47.github.io/myFirstReactNative/ or can access the "snack" directly from expo here: https://snack.expo.dev/@brownj47/github.com-brownj47-myfirstreactnative
+<p align="center">
+    <img src="./assets/IMG_EE747D1E1EE8-1.jpeg" alt="Home page of the application. A placeholder image and the stats for a young brass dragon." style="width:200px;"/>
+</p>
 
 ## License
 
