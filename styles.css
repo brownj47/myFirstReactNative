@@ -1,0 +1,10 @@
+body{
+    background-color: gray;
+}
+header{
+    text-align: center;
+}
+main{
+    margin: 0 auto;
+    max-width: 75%;
+}
